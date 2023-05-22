@@ -5,7 +5,7 @@ from typing import Callable
 os.system('python -m pip install openmim')
 os.system('python -m mim install mmengine')
 os.system('python -m mim install mmcv')
-os.system('python -m mim install -e .')
+os.system('python -m mim install -e .[multimodal]')
 
 import gradio as gr
 from mmpretrain.apis import ImageClassificationInferencer
