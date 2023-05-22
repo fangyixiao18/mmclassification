@@ -2,6 +2,8 @@
 import os
 from typing import Callable
 
+os.system('python -m mim install mmengine')
+os.system('python -m mim install mmcv')
 os.system('python -m mim install -e .')
 
 import gradio as gr
@@ -35,6 +37,7 @@ class ImageClassificationTab:
         self.short_list = [
             'cn-clip_resnet50_zeroshot-cls_cifar100',
             'cn-clip_vit-base-p16_zeroshot-cls_cifar100',
+            'cn-clip_vit-large-p14_zeroshot-cls_cifar100',
         ]
         self.tab = self.create_ui()
 
