@@ -42,9 +42,9 @@ Models:
     Results:
       - Dataset: ImageNet-1k
         Metrics:
-          Top 1 Accuracy:
+          Top 1 Accuracy: 83.3
         Task: Image Classification
-    Weights:
+    Weights: https://download.openmmlab.com/mmpretrain/v1.0/hivit/hivit-small-p16_16xb64_in1k_20230530-93fa9c2e.pth
     Config: configs/hivit/hivit-small-p16_16xb64_in1k.py
 
   - Name: hivit-base-p16_16xb64_in1k
@@ -57,7 +57,7 @@ Models:
     Results:
       - Dataset: ImageNet-1k
         Metrics:
-          Top 1 Accuracy:
+          Top 1 Accuracy: 83.8
         Task: Image Classification
     Weights:
     Config: configs/hivit/hivit-base-p16_16xb64_in1k.py

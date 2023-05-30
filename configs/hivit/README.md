@@ -16,30 +16,30 @@ Recently, masked image modeling (MIM) has offered a new methodology of self-supe
 
 <!-- [TABS-BEGIN] -->
 
-<!-- **Predict image**
+**Predict image**
 
 ```python
 from mmpretrain import inference_model
 
-predict = inference_model('hivit-tiny-p16_16xb64_in1k', 'demo/bird.JPEG')
+predict = inference_model('hivit-small-p16_16xb64_in1k', 'demo/bird.JPEG')
 print(predict['pred_class'])
 print(predict['pred_score'])
 ```
 
-<!-- **Use the model** -->
+**Use the model**
 
-<!-- ```python
+```python
 import torch
 from mmpretrain import get_model
 
-model = get_model('hivit-tiny-p16_16xb64_in1k', pretrained=True)
+model = get_model('hivit-small-p16_16xb64_in1k', pretrained=True)
 inputs = torch.rand(1, 3, 224, 224)
 out = model(inputs)
 print(type(out))
 # To extract features.
 feats = model.extract_feat(inputs)
 print(type(feats))
-``` -->
+```
 
 **Train/Test Command**
 
@@ -51,11 +51,11 @@ Train:
 python tools/train.py configs/hivit/hivit-tiny-p16_16xb64_in1k.py
 ```
 
-<!-- Test:
+Test:
 
 ```shell
-python tools/test.py configs/hivit/hivit-tiny-p16_16xb64_in1k.py None
-``` -->
+python tools/test.py configs/hivit/hivit-small-p16_16xb64_in1k.py https://download.openmmlab.com/mmpretrain/v1.0/hivit/hivit-small-p16_16xb64_in1k_20230530-93fa9c2e.pth
+```
 
 <!-- [TABS-END] -->
 
@@ -63,11 +63,11 @@ python tools/test.py configs/hivit/hivit-tiny-p16_16xb64_in1k.py None
 
 ### Image Classification on ImageNet-1k
 
-| Model                         |   Pretrain   | Params (M) | Flops (G) | Top-1 (%) |                  Config                  | Download |
-| :---------------------------- | :----------: | :--------: | :-------: | :-------: | :--------------------------------------: | :------: |
-| `hivit-tiny-p16_16xb64_in1k`  | From scratch |   19.18    |   4.60    |   82.10   | [config](hivit-tiny-p16_16xb64_in1k.py)  |   N/A    |
-| `hivit-small-p16_16xb64_in1k` | From scratch |   37.53    |   9.07    |    N/A    | [config](hivit-small-p16_16xb64_in1k.py) |   N/A    |
-| `hivit-base-p16_16xb64_in1k`  | From scratch |   79.05    |   18.47   |    N/A    | [config](hivit-base-p16_16xb64_in1k.py)  |   N/A    |
+| Model                         |   Pretrain   | Params (M) | Flops (G) | Top-1 (%) |                  Config                  |                                          Download                                           |
+| :---------------------------- | :----------: | :--------: | :-------: | :-------: | :--------------------------------------: | :-----------------------------------------------------------------------------------------: |
+| `hivit-tiny-p16_16xb64_in1k`  | From scratch |   19.18    |   4.60    |   82.10   | [config](hivit-tiny-p16_16xb64_in1k.py)  |                                             N/A                                             |
+| `hivit-small-p16_16xb64_in1k` | From scratch |   37.53    |   9.07    |   83.30   | [config](hivit-small-p16_16xb64_in1k.py) | [model](https://download.openmmlab.com/mmpretrain/v1.0/hivit/hivit-small-p16_16xb64_in1k_20230530-93fa9c2e.pth) \| [log](https://download.openmmlab.com/mmpretrain/v1.0/hivit/hivit-small-p16_16xb64_in1k_20230530-93fa9c2e.json) |
+| `hivit-base-p16_16xb64_in1k`  | From scratch |   79.05    |   18.47   |   83.80   | [config](hivit-base-p16_16xb64_in1k.py)  |                                             N/A                                             |
 
 ## Citation
 
